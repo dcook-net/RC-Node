@@ -1,0 +1,11 @@
+var ObjectID = require('mongodb').ObjectID;
+
+module.exports = class bsonIdGenerator {
+    // constructor(){
+    //    
+    // }
+    
+    generateId(){
+        return new ObjectID();
+    }
+}
