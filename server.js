@@ -5,6 +5,7 @@ const postController = require('./src/app/controllers/postWip.js');
 const requiredHeaders = require('./src/app/middleware/headerValidation.js');
 const responseHeaders = require('./src/app/middleware/responseHeaders.js');
 const helmet = require('helmet');
+require('dotenv').config();
 
 const app = express();
 const port = 9010;

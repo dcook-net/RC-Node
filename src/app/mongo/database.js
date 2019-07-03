@@ -1,10 +1,10 @@
 const MongoClient = require('mongodb').MongoClient;
 
 module.exports = class database {
-    constructor(connectionString, dbName, collectionName) {
-        this.connectionString = connectionString || 'mongodb://localhost:27017';
-        this.datbaseName = dbName || 'RiskCapture';
-        this.collectionName = collectionName || 'WIPRisks';
+    constructor() {
+        this.connectionString = process.env.MONGODBCONNSTRING;
+        this.datbaseName = process.env.MONGODBNAME;
+        this.collectionName = process.env.MONGOCOLLECTIONNAME;
     };
     
     async insert(wipRisk) {

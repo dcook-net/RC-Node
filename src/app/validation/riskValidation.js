@@ -1,16 +1,16 @@
 const rp = require('request-promise');
 
 module.exports = class riskValidation {
-    constructor(riskValidationServiceUri){
-        this.riskValidationServiceUri = riskValidationServiceUri || 'https://risk-validation-product.shadow.ctmers.io/';
-    }
+    constructor(){
+        this.riskValidationServiceUri = process.env.RISKVALIDATIONURI;
+    };
     
     async validate(product, version, wip, headers) {
         
         const validationUri = this.getValidationUri(product, version);
         
         const options = {
-            uri : validationUri ,
+            uri : validationUri,
             method : 'post',
             body : wip.risk,
             json : true,
